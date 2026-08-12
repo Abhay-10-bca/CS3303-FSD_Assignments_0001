@@ -70,3 +70,34 @@ button:hover {
   color: green;
   font-weight: bold;
 }
+
+.toast {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+
+  background: #28a745;
+  color: white;
+
+  padding: 15px 25px;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -6,18 +6,15 @@ function App() {
   const [password, setPassword] = useState("");
 
   const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState("");
+  const [showToast, setShowToast] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newErrors = {};
 
-    // Username: letters, numbers and underscore, 3-15 characters
     const usernameRegex = /^[a-zA-Z0-9_]{3,15}$/;
 
-    // Password: minimum 8 characters,
-    // at least one uppercase, lowercase, number and special character
     const passwordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -36,11 +33,15 @@ function App() {
     }
 
     setErrors(newErrors);
-    setMessage("");
 
-    // If there are no errors
+    // Valid form
     if (Object.keys(newErrors).length === 0) {
-      setMessage("Password submitted successfully");
+      setShowToast(true);
+
+      // Automatically hide toast after 3 seconds
+      setTimeout(() => {
+        setShowToast(false);
+      }, 3000);
     }
   };
 
@@ -83,8 +84,11 @@ function App() {
 
       </form>
 
-      {message && (
-        <p className="message">{message}</p>
+      {/* Toast Message */}
+      {showToast && (
+        <div className="toast">
+          ✓ Password submitted successfully
+        </div>
       )}
 
     </div>
