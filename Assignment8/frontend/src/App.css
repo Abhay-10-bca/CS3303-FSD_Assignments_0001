@@ -1,0 +1,385 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f7f8fc;
+    color: #222;
+}
+
+/* ================= NAVBAR ================= */
+
+nav {
+    background: white;
+    color: #222;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #5b5bd6;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background: #f0f0ff;
+    color: #5b5bd6;
+}
+
+nav span {
+    color: #555;
+    margin-left: 8px;
+}
+
+nav button {
+    background: #5b5bd6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav button:hover {
+    background: #4848c4;
+}
+
+/* ================= GENERAL PAGE ================= */
+
+.page {
+    max-width: 1150px;
+    margin: auto;
+    padding: 50px 25px;
+}
+
+.page h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #222;
+}
+
+.page > p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ================= HOME ================= */
+
+.page:first-of-type {
+    text-align: center;
+}
+
+.page h1 {
+    font-weight: 700;
+}
+
+.page button {
+    margin-top: 15px;
+}
+
+/* ================= BUTTONS ================= */
+
+button {
+    background: #5b5bd6;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 9px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #4848c4;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.product-card h3 {
+    margin-top: 0;
+    margin-bottom: 14px;
+    font-size: 19px;
+    color: #222;
+}
+
+.product-card p {
+    color: #777;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.product-card p:nth-of-type(2) {
+    color: #5b5bd6;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.product-card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #5b5bd6;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.product-card a:hover {
+    text-decoration: underline;
+}
+
+.product-card button {
+    margin-top: 12px;
+    width: 100%;
+}
+
+/* ================= PRODUCT DETAILS ================= */
+
+.page input[type="number"] {
+    width: 80px;
+    margin-left: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+}
+
+.page input[type="number"]:focus {
+    border-color: #5b5bd6;
+}
+
+.page h1 + p {
+    color: #666;
+}
+
+/* ================= LOGIN ================= */
+
+form {
+    background: white;
+    max-width: 420px;
+    margin: 30px auto;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+form input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
+}
+
+form input:focus {
+    border-color: #5b5bd6;
+    box-shadow: 0 0 0 3px rgba(91, 91, 214, 0.08);
+}
+
+form button {
+    width: 100%;
+}
+
+/* ================= CART ================= */
+
+.cart-item {
+    background: white;
+    padding: 22px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cart-item h3 {
+    margin: 0;
+    min-width: 220px;
+}
+
+.cart-item p {
+    color: #5b5bd6;
+    font-weight: 600;
+    margin: 0;
+}
+
+.cart-item button {
+    padding: 8px 13px;
+}
+
+.cart-item span {
+    font-weight: 600;
+    min-width: 25px;
+    text-align: center;
+}
+
+.page > h2 {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.cart-item button:last-child {
+    background: #f3f3f3;
+    color: #555;
+}
+
+.cart-item button:last-child:hover {
+    background: #ffe8e8;
+    color: #d33;
+}
+
+/* ================= ORDERS ================= */
+
+.order {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 14px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.order h3 {
+    margin-top: 0;
+    color: #5b5bd6;
+}
+
+.order p {
+    color: #666;
+    margin: 8px 0;
+}
+
+.order strong {
+    display: block;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #222;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 35px 0;
+}
+
+/* ================= ERROR / MESSAGE ================= */
+
+.page p {
+    line-height: 1.6;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav div {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav div {
+        gap: 2px;
+    }
+
+    nav a {
+        padding: 6px 8px;
+        font-size: 13px;
+    }
+
+    .page {
+        padding: 30px 18px;
+    }
+
+    .page h1 {
+        font-size: 28px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cart-item h3 {
+        min-width: auto;
+    }
+
+    form {
+        padding: 25px;
+    }
+}
