@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Child | Family Management</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 16px;
+            background-color: #198754;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #157347;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 15px;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="form-box">
+
+        <h1>Add Child</h1>
+
+        <p>
+            Parent:
+            <strong>
+                <%= user.firstName %> <%= user.lastName %>
+            </strong>
+        </p>
+
+        <form action="/users/<%= user._id %>/children" method="POST">
+
+            <label>First Name</label>
+
+            <input
+                type="text"
+                name="firstName"
+                required
+            >
+
+            <label>Last Name</label>
+
+            <input
+                type="text"
+                name="lastName"
+                required
+            >
+
+            <label>Age</label>
+
+            <input
+                type="number"
+                name="age"
+                required
+            >
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                name="email"
+                required
+            >
+
+            <button type="submit">
+                Add Child
+            </button>
+
+        </form>
+
+        <a
+            class="back"
+            href="/users/<%= user._id %>">
+            ← Back to Profile
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

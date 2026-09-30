@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= user.firstName %> <%= user.lastName %> | Children</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .header {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .child {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>
+            <%= user.firstName %> <%= user.lastName %>
+        </h1>
+
+        <p>
+            <strong>Email:</strong> <%= user.email %>
+        </p>
+
+        <p>
+            <strong>Phone:</strong> <%= user.phone %>
+        </p>
+
+        <a class="back" href="/users/<%= user._id %>">
+            Back to Profile
+        </a>
+
+    </div>
+
+    <h2>Children</h2>
+
+    <% children.forEach(child => { %>
+
+        <div class="child">
+
+            <h3>
+                <%= child.firstName %> <%= child.lastName %>
+            </h3>
+
+            <p>
+                <strong>Age:</strong>
+                <%= child.age %>
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <%= child.email %>
+            </p>
+
+        </div>
+
+    <% }) %>
+
+</div>
+
+</body>
+</html>
